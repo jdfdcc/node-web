@@ -10,10 +10,9 @@ class LoginController extends Controller {
   async login () {
     let pass = false;
     const { ctx } = this;
-    console.log(ctx.query);
-    const { loginName, password } = ctx.query;
+    const { loginName, password } = ctx.request.body;
     if (loginName === 'zhangsan' && password === '123456') {
-      pass= true
+      pass= true;
     }
     ctx.body = {
       pass
